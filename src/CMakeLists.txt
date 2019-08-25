@@ -16,6 +16,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra"
 )
 
-target_link_libraries(range CONAN_PKG::range-v3)
+target_link_libraries(range ${CONAN_LIBS})
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
