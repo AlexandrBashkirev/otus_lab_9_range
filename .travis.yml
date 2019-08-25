@@ -1,6 +1,6 @@
 dist: xenial
 language: c++
-compiler: clang
+compiler: gcc
 before_script:
 - sudo apt-get install libboost-test-dev python3-pip -y
 - pip3 install setuptools

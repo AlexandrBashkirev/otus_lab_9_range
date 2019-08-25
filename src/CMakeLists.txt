@@ -8,9 +8,7 @@ set(CMAKE_BUILD_TYPE Release)
 
 include(${CMAKE_BINARY_DIR}/conan.cmake)
 
-conan_cmake_run(REQUIRES
-                    range-v3/0.5.0@ericniebler/stable
-                BASIC_SETUP CMAKE_TARGETS
+conan_cmake_run(CONANFILE ../conanfile.txt
                 BUILD missing)
 
 list(APPEND ${PROJECT_NAME}_SOURCES
