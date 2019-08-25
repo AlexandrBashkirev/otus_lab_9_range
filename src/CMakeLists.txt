@@ -1,8 +1,10 @@
-if(EXISTS ${CMAKE_HOME_DIRECTORY}/conanbuildinfo.cmake)
-    include(${CMAKE_HOME_DIRECTORY}/conanbuildinfo.cmake)
-else()
-    message(FATAL_ERROR "Conan not installed. Run 'conan install .'")
-endif()
+
+include(${CMAKE_HOME_DIRECTORY}/conanbuildinfo.cmake)
+
+conan_cmake_run(REQUIRES
+                    range-v3/0.5.0@ericniebler/stable
+                BASIC_SETUP CMAKE_TARGETS
+                BUILD missing)
 
 list(APPEND ${PROJECT_NAME}_SOURCES
     range_main.cpp
