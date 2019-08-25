@@ -1,9 +1,11 @@
+if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
+   message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
+   file(DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.13/conan.cmake"
+                 "${CMAKE_BINARY_DIR}/conan.cmake")
+endif()
+include(${CMAKE_BINARY_DIR}/conan.cmake)
 
-include(${CMAKE_HOME_DIRECTORY}/conanbuildinfo.cmake)
-
-conan_cmake_run(REQUIRES
-                    range-v3/0.5.0@ericniebler/stable
-                BASIC_SETUP CMAKE_TARGETS
+conan_cmake_run(CONANFILE conanfile.txt
                 BUILD missing)
 
 list(APPEND ${PROJECT_NAME}_SOURCES
