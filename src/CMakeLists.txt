@@ -3,6 +3,9 @@ if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
    file(DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.13/conan.cmake"
                  "${CMAKE_BINARY_DIR}/conan.cmake")
 endif()
+
+set(CMAKE_BUILD_TYPE Release)
+
 include(${CMAKE_BINARY_DIR}/conan.cmake)
 
 conan_cmake_run(CONANFILE ../conanfile.txt
