@@ -1,5 +1,5 @@
 if(EXISTS ${CMAKE_HOME_DIRECTORY}/conanbuildinfo.cmake)
-    include(conanbuildinfo.cmake)
+    include(${CMAKE_HOME_DIRECTORY}/conanbuildinfo.cmake)
 else()
     message(FATAL_ERROR "Conan not installed. Run 'conan install .'")
 endif()
